@@ -9,10 +9,10 @@ use Zelenin\yii\modules\I18n\models\SourceMessage;
 class Module extends \yii\base\Module
 {
     public $pageSize = 50;
-
-    public static function t($message, $params = [], $language = null)
+	
+	    public static function t($category, $message, $params = [], $language = null)
     {
-        return Yii::t('zelenin/modules/i18n', $message, $params, $language);
+        return Yii::t($category, $message, $params, $language);
     }
 
     /**
@@ -38,7 +38,7 @@ class Module extends \yii\base\Module
             ], false);
             $sourceMessage->save(false);
         }
-        $sourceMessage->initMessages();
-        $sourceMessage->saveMessages();
+     //  $sourceMessage->initMessages();
+     //   $sourceMessage->saveMessages();
     }
 }

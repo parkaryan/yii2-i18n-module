@@ -48,9 +48,9 @@ class Message extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Module::t('ID'),
-            'language' => Module::t('Language'),
-            'translation' => Module::t('Translation')
+            'id' => Module::t('i18n','ID'),
+            'language' => Module::t('i18n','Language'),
+            'translation' => Module::t('i18n','Translation')
         ];
     }
 

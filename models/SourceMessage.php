@@ -52,10 +52,10 @@ class SourceMessage extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Module::t('ID'),
-            'category' => Module::t('Category'),
-            'message' => Module::t('Message'),
-            'status' => Module::t('Translation status')
+            'id' => Module::t('i18n','ID'),
+            'category' => Module::t('i18n','Category'),
+            'message' => Module::t('i18n','Message'),
+            'status' => Module::t('i18n','Translation status')
         ];
     }
 
@@ -93,6 +93,15 @@ class SourceMessage extends ActiveRecord
         foreach ($this->messages as $message) {
             $this->link('messages', $message);
             $message->save();
+        }
+    }
+
+    public function deleteMessages()
+    {
+        /** @var Message $message */
+        foreach ($this->messages as $message) {
+            $this->link('messages', $message);
+            $message->delete();
         }
     }
 

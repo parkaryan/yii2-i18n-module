@@ -56,8 +56,8 @@ class SourceMessageSearch extends SourceMessage
     public static function getStatus($id = null)
     {
         $statuses = [
-            self::STATUS_TRANSLATED => Module::t('Translated'),
-            self::STATUS_NOT_TRANSLATED => Module::t('Not translated'),
+            self::STATUS_TRANSLATED => Module::t('i18n','Translated'),
+            self::STATUS_NOT_TRANSLATED => Module::t('i18n','Not translated'),
         ];
         if ($id !== null) {
             return ArrayHelper::getValue($statuses, $id, null);
